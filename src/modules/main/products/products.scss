@@ -4,7 +4,7 @@
 }
 
 .main-products{
-    background: #f5f1ea;
+    background: $system-color-grey;
     height: auto;
     padding: 40px 60px 10px;
     &__list{
@@ -31,5 +31,11 @@
             color: $system-color-green-light;
             border-bottom: 1px solid $system-color-green-light;
         }
+    }
+}
+
+@media (max-width: $mobile) {
+    .main-products{
+        padding-left: 30px;
     }
 }

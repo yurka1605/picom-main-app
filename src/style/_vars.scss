@@ -6,6 +6,7 @@ $times-new-roman:                                'Roboto-Regular', 'AdobeInvisFo
 $andale-mono-ipa:                                'AndaleMonoIPA', 'Roboto-Regular', 'AdobeInvisFont', 'MyriadPro-Regular';
 
 // Размер шрифта
+$font-size-smaller-xs:                           10px;
 $font-size-smaller:                              12px;
 $font-size-base:                                 14px;
 $font-size-small:                                16px;
@@ -13,6 +14,7 @@ $font-size-middle:                               18px;
 $font-size-large:                                30px;
 
 // Системные цвета
+$system-color-grey:                              #f5f1ea;
 $system-color-green-light:                       rgb(94,171,67);
 $system-color-green-dark:                        rgba(48,128,28,1);   
 $system-color-black:                             rgba(55, 55, 55, 255);
@@ -28,6 +30,9 @@ $system-background-gradient:                     linear-gradient(180deg, $system
 
 $desktop:                                        1280px;
 $laptop:                                         1024px;
+$laptop-min:                                     992px;
 $tablet:                                         768px;
-$mobile-large:                                   480px;
+$mobile-large:                                   680px;
+$mobile-big:                                     600px;
+$mobile-middle:                                  480px;
 $mobile:                                         320px;

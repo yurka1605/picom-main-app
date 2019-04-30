@@ -15,6 +15,7 @@
     const companyArticles = [
         {
             'date': '28 марта',
+            'link': '/',
             'description':  'СП ЗАО «УДОЛ» сегодня - это динамично развивающаяся современная компания, зарекомендовавшая себя как надежный поставщик'
         },
         {
@@ -36,13 +37,19 @@ section.company-about
         h1 О компании
     .company-about__main
         p.company-about__history Совместное предприятие "Удмуртские долота" (СП ЗАО "УДОЛ") организованое в 1996 году компаниями "Diamond Products International, Inc." (США), ОАО "Удмуртнефть" и ГПО "Воткинский завод" (Россия), производит высококачественное буровое оборудование, применяя передовые технологии, накопленный опыт и знания с целью повышения эффективности работы буровых и сервисных компаний.
-        p.company-about__today
+        div.company-about__today
             p.company-about__today_head
                 | На сегодняшний день нашим предприятием разработаны и выпускаются:
-            .company-about__today_body
+            div.company-about__today_body
                 +listing('company-about', companyBodyList)
 section.company-news
     .company-header.company-news__header
         h1 Новости
-    section.company-headers__articles
+    section.company-news__articles
         +articles('company-news', companyArticles)
+    section.company-news__sertificate
+        button.company-news__sertificate-button
+            img.company-news__image.company-news__image_first(src="../../assets/sertificate-1.png")
+            img.company-news__image.company-news__image_two(src="../../assets/sertificate-2.png")
+            img.company-news__image.company-news__image_three(src="../../assets/sertificate-3.png")
+            | Сертификаты

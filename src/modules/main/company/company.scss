@@ -1,0 +1,258 @@
+.company-about{
+    width: calc(100% - 350px);
+    margin-right: 30px;
+    min-width: $mobile - 60px;
+    
+    &__header{
+        font-size: $font-size-middle;
+        h1{
+            font-family: inherit;
+            font-size: inherit;
+            color: inherit;
+        }
+    }
+
+    &__main{
+        font-family: $times-new-roman;
+    }
+
+    &__history{
+        font-family: inherit;
+    }
+
+    &__today{
+        padding-top: 30px;
+        &_head{
+            padding-bottom: 30px;
+        }
+
+        &_body{
+            padding-left: 45px;
+        }
+    }
+
+    &__list{
+        list-style-type: none;
+        position: relative;
+        &::before{
+            background-color: #bbdcb2;
+            margin-left: -15px;
+            @include psevdo-elements($top: $font-size-base/2, $left: 0, $width: 8px, $height: 1px);
+        }
+    }
+}
+
+.company-header{
+    width: 100%;
+    height: 40px;
+    @include display-flex($items: center);
+    text-transform: uppercase;
+    color: $system-color-green-light;
+    margin-bottom: 30px;
+    border-bottom: 7px solid $system-color-grey;
+    font-family: $roboto-bold;
+}
+
+//Статьи
+
+.article{
+    padding: 0 20px 20px;
+    margin-bottom: 20px;
+    &__header{
+        text-transform: uppercase;
+    }
+    &__link{
+        text-decoration: underline;
+    }
+    &:last-child{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+.company-news{
+    width: $mobile;
+    &__header{
+        h1{
+            color: inherit;
+            font-size: inherit;
+        }
+    }
+    &__articles{
+        height: 290px;
+        overflow: auto;
+        scrollbar-color: $system-color-green-light $white-color;
+        scrollbar-width: thin;
+        font-family: $andale-mono-ipa;
+        &::-webkit-scrollbar-track{
+            background-color: $white-color;
+        }
+        &::-webkit-scrollbar{
+            width: 6px;
+            background-color: $white-color;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color: $system-color-green-light;
+        }
+    }
+
+    &__article{
+        position: relative;
+        &::after{
+            background-color: #e1dacc;
+            @include psevdo-elements($bottom: 0, $left: -20px, $width: 85%, $height: 1px);
+        }
+        &:last-child{
+            &::after{
+                height: 0;
+            }
+        }
+    }
+
+    &__header-article{
+        display: block;
+        font-size: $font-size-smaller-xs;
+    }
+
+    &__link{
+        @include system-link;
+    }
+
+    &__sertificate{
+        height: 160px;
+        width: 100%;
+    }
+    &__sertificate-button{
+        position: relative;
+        width: 100%;
+        height: 70px;
+        border: 0;
+        border-radius: 5px;
+        margin-top: 50px;
+        padding-right: 30px;
+        text-align: right;
+        cursor: pointer;
+        color: $white-color;
+        text-transform: uppercase;
+        background: $system-background-gradient;
+    }
+    &__image{
+        position: absolute;
+        left: 30px;
+        top: 0;
+        margin-top: -25px;
+        z-index: 1;
+        cursor: pointer;
+        transition: .2s;
+        &_two{
+            left: 45px;
+            z-index: 2;
+        }
+        &_three{
+            left: 60px;
+            top: 5px;
+        }
+        &:hover{
+            z-index: 3;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .company-news{
+        &__sertificate-button{
+            padding-right: 30px;
+        }
+        &__image{
+            left: 10px;
+            &_two{
+                left: 25px;
+                z-index: 2;
+            }
+            &_three{
+                left: 35px;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-large) {
+    .company-news{
+        &__sertificate-button{
+            height: 50px;
+            padding-right: 5px;
+        }
+        &__image{
+            width: 50px;
+            top: 12px;
+            left: 5px;
+            &_three{
+                top: 15px;
+                left: 25px;
+            }
+            &_two{
+                left: 15px;
+                z-index: 2;
+            }
+        }
+    }
+}
+@media (max-width: $mobile-large) {
+    .company-news{
+        &__sertificate-button{
+            height: 50px;
+            padding-right: 5px;
+        }
+        &__image{
+            width: 50px;
+            top: 12px;
+            left: 5px;
+            &_three{
+                top: 15px;
+                left: 25px;
+            }
+            &_two{
+                left: 15px;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-big) {
+    .company-about{
+        margin-bottom: 40px;
+    }
+    .company-news{
+        width: auto;
+        min-width: $mobile - 60px;
+        &__sertificate-button{
+            height: 70px;
+            width: calc(100% + 20px);
+            margin-left: -10px;
+            padding-right: 20px;
+        }
+        &__image{
+            position: absolute;
+            width: auto;
+            left: 20px;
+            top: 0;
+            margin-top: -25px;
+            &_two{
+                left: 35px;
+            }
+            &_three{
+                left: 50px;
+                top: 5px;
+            }
+        }
+    }
+    .page-wrapper{
+        &__slider{
+            height: 450px;
+        }
+        &__company-info{
+            flex-direction: column;
+        }
+    }
+}

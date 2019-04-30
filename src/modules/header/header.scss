@@ -76,7 +76,7 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
         width: 280px;
         height: 30px;
         box-shadow: inset 0px 1.5px 5px 0px #bdbab6;
-        background-color: #f4f1eb;
+        background-color: $system-color-grey;
         border: 0;
         border-radius: 5px;
         color: $system-color-black;
@@ -109,6 +109,54 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
             border-top-right-radius: 25px;
             border-right: 0;
             padding-right: 30px;
+        }
+    }
+}
+
+@media (max-width: $laptop-min) {
+    .header-menu{
+        &__list{
+            padding: 0!important;
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .page-header{
+        &__block_contacts,
+        &__nav{ display: none }
+        &__input_search{ width: 100% }
+    }
+}
+
+@media (max-width: $mobile-large) {
+    .page-header{
+        &__link_page_main{
+            width: 106px;
+            justify-content: center;
+        }
+        &__logo{width: 106px}
+        &__name-company{
+            font-size: $font-size-smaller-xs - 1px;
+            padding-top: 1px;
+            margin-top: 1px;
+            letter-spacing: 0;
+            white-space: nowrap;
+        }
+    }
+}
+
+@media (max-width: $mobile-big) {
+    .page-header{
+        padding: 30px 30px 50px;
+        height: auto;
+        &__top{
+            flex-direction: column;
+            height: 80px;
+        }
+        &__notification{
+            display: none;
         }
     }
 }

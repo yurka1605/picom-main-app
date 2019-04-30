@@ -4,7 +4,8 @@
 @import '../modules/main/main';
 @import '../modules/main/slider/slider';
 @import '../modules/main/products/products';
-@import '../modules/main/company info/company';
+@import '../modules/main/company/company';
+@import '../modules/footer/footer';
 
 *{
     padding: 0;
@@ -28,6 +29,7 @@ button {
 }
 
 .page-wrapper {
+    position: relative;
     background-color: $white-color;
     margin: 0 auto;
     max-width: $desktop;
