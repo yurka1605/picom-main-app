@@ -1,0 +1,54 @@
+//- Меню
+mixin menu(classMenu, classItem, items)
+    ul.menu(class=classMenu)
+        each item in items
+            li.menu__item(class=classItem)=item
+
+//- Слайдер            
+mixin slider(slider)
+    section.slider(class=slider.customSlider)
+        +arrow(slider.item, `${ slider.customSlider }__arrow`)
+        .slider__item(class=slider.customSlide)
+            each item in slider.slides
+                div(class=`${ slider.customSlider }__block-info`)
+                    h1(class=`${ slider.customSlider }__name-slide`) #{item.head}
+                    div(class=`${ slider.customSlider }__descriptions`) #{item.body}
+                div(class=`${ slider.customSlider }__block-image`)
+                    img(class=`${ slider.customSlider }__image_shadow_dark`, src="../assets/shadow-dark-img.png")
+                    img(class=`${ slider.customSlider }__image_shadow_light`, src="../assets/shadow-light-img.png")
+                    img(class=`${ slider.customSlider }__image_main` ,src=item.img, alt="")
+
+//- Стрелки
+mixin arrow(imgSrc, customArrow)
+    if(imgSrc) 
+        .slider__arrow.slider__arrow_left(class=customArrow)
+            img(src=slider.arrowIcon, alt="Arrow")    
+        .slider__arrow.slider__arrow_right(class=customArrow)
+            img(src=slider.arrowIcon, alt="Arrow")  
+    else
+        .slider__arrow.slider__arrow_left(class=customArrow)
+            .slider__arrow_block
+        .slider__arrow.slider__arrow_right(class=customArrow)
+            .slider__arrow_block
+
+mixin product-list(customClass, products)
+    each product in products
+        section.product(class=`${ customClass }__list`)
+            .product__image(class=`${ customClass }__image`)
+                img(src=product.image, alt=product.productName)
+            h3(class=`${ customClass }__name`)
+                a(href=`${ product.link ? product.link : '#' }`) #{product.productName}
+
+mixin listing(classListing, items)
+    ul(class=`${classListing}__listing`)
+        each item in items
+            li(class=`${classListing}__list`)
+                | #{item}
+
+mixin articles(classArticles, items)
+    each item in items
+        article.article(class=`${ classArticles }__article`)
+            h4.article__header(class=`${ classArticles }__header`)
+                | #{item.date}
+            div.article__body(class=`${ classArticles }__body`)
+                | #{item.description}

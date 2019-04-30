@@ -37,7 +37,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "scripts": {
-    "dev": "webpack -w --config build/webpack.develop.config.js",
+    "dev": "webpack-dev-server -w --config build/webpack.develop.config.js",
     "prod": "webpack --config build/webpack.production.config.js",
     "start": "webpack-dev-server"
   },

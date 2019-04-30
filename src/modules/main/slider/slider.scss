@@ -1,0 +1,107 @@
+.slider{
+    position: relative;
+    @include display-flex($justify: space-between, $items: center);
+    &__arrow{
+        position: absolute;
+        cursor: pointer;
+        &_left{
+            left: 0;
+        }
+        &_right{
+            right: 0;
+            transform: rotate(180deg);
+        }
+        &_block{
+            &::before,
+            &::after{ 
+                @include psevdo-elements($width: 60px, $height: 2px, $top: 50%);
+                background: $white-color;
+                opacity: 0.3;
+                transform-origin: 0 100%;
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    &__item{
+        @include display-flex($justify: space-between, $items: center);
+    }
+}
+.main-slider{
+    padding: 0 8%;
+    height: inherit;
+
+    &__arrow{
+        width: 43px;
+        height: 84px;
+    }
+    
+    &__item{
+        position: relative;
+        height: inherit;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    &__block-info{
+        width: calc(100% - 300px);
+        height: 140px;
+    }
+
+    &__name-slide{
+        position: relative;
+        display: inline-block;
+        width: auto;
+        height: 40px;
+        font-family: $roboto-bold;
+        text-transform: uppercase;
+        font-size: $font-size-large;
+        color: $white-color;
+        &::after{
+            @include psevdo-elements( $left: 0, $bottom: 0, $width: 100%, $height: 1px);
+            background: $white-color;
+        }
+    }
+
+    &__descriptions{
+        padding-top: 17px;
+        color: $white-color;
+        font-size: $font-size-middle;
+    }
+
+    &__block-image{
+        position: relative;
+        width: 300px;
+        height: 100%;
+    }
+
+    &__image_shadow_dark{
+        position: absolute;
+        z-index: 0;
+        top: -10%;
+        left: 43%;
+        opacity: .5;
+        width: 200px;
+        height: 500px;
+    }
+
+    &__image_shadow_light{
+        position: absolute;
+        z-index: 0;
+        top: -70%;
+        left: -270px;
+        opacity: .3;
+    }
+
+    &__image_main{
+        position: absolute;
+        left: 15%;
+        top: -58%;
+        margin-top: 160px;
+        z-index: 5;
+    }
+}

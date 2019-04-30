@@ -1,0 +1,114 @@
+$content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs/><g><path fill='rgb(80,174,48)' stroke='none' paint-order='stroke fill markers' fill-rule='evenodd' d=' M 12.95817756652832 15.05836021900177 C 12.95817756652832 15.05836021900177 9.561075210571289 11.660898864269257 9.561075210571289 11.660898864269257 C 8.688722610473633 12.260656356811523 7.61720085144043 12.623523831367493 6.4722900390625 12.623523831367493 C 3.4564781188964844 12.623523831367493 1.0038700103759766 10.171002566814423 1.0038700103759766 7.155403554439545 C 1.0038700103759766 4.1395862102508545 3.4564781188964844 1.7049681544303894 6.4722900390625 1.7049681544303894 C 9.488517761230469 1.7049681544303894 11.922622680664062 4.1395862102508545 11.922622680664062 7.155403554439545 C 11.922622680664062 8.31823879480362 11.577299118041992 9.371689796447754 10.959833145141602 10.261828601360321 C 10.959833145141602 10.261828601360321 14.356935501098633 13.659071624279022 14.356935501098633 13.659071624279022 C 14.356935501098633 13.659071624279022 12.95817756652832 15.05836021900177 12.95817756652832 15.05836021900177 Z M 6.4722900390625 10.807003140449524 C 8.470426559448242 10.807003140449524 10.105775833129883 9.17191618680954 10.105775833129883 7.155403554439545 C 10.105775833129883 5.157230794429779 8.470426559448242 3.5217071771621704 6.4722900390625 3.5217071771621704 C 4.45585823059082 3.5217071771621704 2.8207168579101562 5.157230794429779 2.8207168579101562 7.155403554439545 C 2.8207168579101562 9.17191618680954 4.45585823059082 10.807003140449524 6.4722900390625 10.807003140449524 Z'/></g></svg>");
+
+.page-header {
+    position: relative;
+    @include display-flex( $direct: column, $justify: space-between );
+    height: 200px;
+    padding: 0 $main-padding;
+    padding-top: 50px;
+    
+    &__top {
+        @include display-flex( $justify: space-between );
+    }
+
+    &__link_page_main {
+        @include display-flex( $direct: column );
+        width: 230px;
+    }
+    &__name-company {
+        position: relative;
+        font-size: $font-size-middle;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 5px;
+        padding-top: 5px;
+        letter-spacing: 1.1px;
+        
+        &::before {
+            @include psevdo-elements( $top: 0, $left: 0, $width: 100%, $height: 2px);
+            background-color: #000000;
+        }
+    }
+    &__block{
+        @include display-flex( $direct: column, $justify: space-between );
+        &_contacts { width: 170px }
+    }
+    &__link{
+        @include system-link();
+        &_sign_up { padding-right: 18px }
+    }
+    
+    &__span{ @include display-flex()}
+    
+    &__span_number-company { font-size: $font-size-middle }
+    
+    &__notification {
+        @include display-flex( $justify: flex-end, $items: center );
+    }
+
+    &__button{
+        @include display-flex( $justify: space-between, $items: center );
+        background-color: $system-color-green-light;
+        background: $system-background-gradient;
+        color: #ffffff;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+
+        &_sign_in {
+            width: 77px;
+            height: 30px;
+            border-radius: 5px;
+            padding: 0 8px;
+            font-size: $font-size-smaller;
+        }
+    }
+    &__form{
+        span {
+            position: relative;
+            &::after {
+                @include psevdo-elements( $content: $content-svg-search, $top: 0, $right: 10px, $width: 16px, $height: 17px);
+            }
+        }
+    }
+    &__input_search{
+        position: relative;
+        width: 280px;
+        height: 30px;
+        box-shadow: inset 0px 1.5px 5px 0px #bdbab6;
+        background-color: #f4f1eb;
+        border: 0;
+        border-radius: 5px;
+        color: $system-color-black;
+        padding: 0 30px 0 10px;
+    }
+
+    &__nav{
+        height: 50px;
+        width: 100%;
+    }
+}
+.header-menu{
+    width: 100%;
+    height: 100%;
+    &__list {
+        color: $white-color;
+        font-size: $font-size-smaller;
+        background-color: $system-color-green-light;
+        background: $system-background-gradient;
+        border-left: 1px solid $system-color-green-light;
+        border-right: 1px solid $system-color-green-dark;
+        padding: 0 15px;
+        flex:1 1 auto;
+        &:first-child {
+            padding-left: 30px;
+            border-top-left-radius: 25px;
+            border-left: 0;
+        }
+        &:last-child {
+            border-top-right-radius: 25px;
+            border-right: 0;
+            padding-right: 30px;
+        }
+    }
+}

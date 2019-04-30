@@ -39,7 +39,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
               MiniCssExtractPlugin.loader,
               { 
                 loader: 'css-loader',
-                options: { sourceMap: true } 
+                options: { sourceMap: true, url: false } 
               },
               { 
                 loader: 'postcss-loader',
@@ -50,7 +50,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
               },
               { 
                 loader: 'sass-loader',
-                options: { sourceMap: true } 
+                options: { sourceMap: true }
               },
             ],
           },
@@ -60,7 +60,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
               MiniCssExtractPlugin.loader,
               {
                 loader: 'css-loader',
-                options: { sourceMap: true }
+                options: { sourceMap: true , url: false}
               }, 
               {
                 loader: 'postcss-loader',
@@ -79,23 +79,20 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
                 options: {
                   name: '[path][name].[ext]',
                 },
-              },
-            ],
+              }
+            ]
           }
         ]
-    },
-    devServer: {
-        contentBase: './develop',
     },
     plugins: [
       new HtmlWebpackPlugin({
         hash: false,
-        template: `./src/index.pug`,
+        template: './src/index.pug',
         filename: 'index.html',
         inject: true
       }),
       new MiniCssExtractPlugin({
-        filename: './css/[name].css'
+        filename: './style/[name].css'
       }),
       new CopyWebpackPlugin([
         { from: './src/assets', to: './assets' },

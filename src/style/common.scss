@@ -1,0 +1,45 @@
+@import './mixin';
+@import './vars';
+@import '../modules/header/header';
+@import '../modules/main/main';
+@import '../modules/main/slider/slider';
+@import '../modules/main/products/products';
+@import '../modules/main/company info/company';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $roboto-regular;
+    font-size: $font-size-base;
+    color: $system-color-black;
+}
+html, body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none }
+
+input,
+button {
+    outline: none; 
+    appearance: none; 
+}
+
+.page-wrapper {
+    background-color: $white-color;
+    margin: 0 auto;
+    max-width: $desktop;
+    min-width: $mobile;
+}
+.menu{
+    list-style-type: none;
+    @include display-flex($justify: space-between);
+    &__item{
+        @include display-flex($justify: center, $items: center);
+        text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+    }
+}

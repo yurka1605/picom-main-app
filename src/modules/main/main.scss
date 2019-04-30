@@ -1,0 +1,19 @@
+.page-wrapper{
+    &__content{
+        width: 100%;
+    }
+    &__slider{
+        background: $system-background-gradient;
+        padding: 0 $main-padding;
+        height: 240px;
+    }
+
+    &__products{
+        padding: 0 $main-padding;
+    }
+
+    &__company-info{
+        @include display-flex($justify: space-between);
+        padding: 60px $main-padding 50px;
+    }
+}

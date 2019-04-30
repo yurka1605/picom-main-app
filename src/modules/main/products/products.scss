@@ -1,0 +1,35 @@
+.products{
+    @include display-flex();
+    flex-wrap: wrap;
+}
+
+.main-products{
+    background: #f5f1ea;
+    height: auto;
+    padding: 40px 60px 10px;
+    &__list{
+        width: 200px;
+        height: auto;
+        margin-right: 10px;
+        margin-bottom: 30px;
+    }
+    &__image{
+        position: relative;
+        width: 200px;
+        height: 140px;
+        margin-bottom: 10px;
+        background-color: $system-color-green-dark;
+        background: $system-background-gradient;
+        border-radius: 5px;
+        box-shadow: inset 0px 1px 8.5px -2px rgba(0,0,0,0.75);
+        img{
+            @include position-center($center-x: 50%, $center-y: 50%);
+        }    
+    }
+    &__name{
+        a{
+            color: $system-color-green-light;
+            border-bottom: 1px solid $system-color-green-light;
+        }
+    }
+}

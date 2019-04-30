@@ -1,0 +1,33 @@
+ 
+// Шрифт
+$roboto-regular:                                 'Tahoma-Bold', 'Roboto-Regular', 'AdobeInvisFont', 'MyriadPro-Regular';
+$roboto-bold:                                    'Tahoma-Bold', 'Roboto-Bold', 'AdobeInvisFont', 'MyriadPro-Regular';
+$times-new-roman:                                'Roboto-Regular', 'AdobeInvisFont', 'MyriadPro-Regular', 'TimesNewRomanPSMT';
+$andale-mono-ipa:                                'AndaleMonoIPA', 'Roboto-Regular', 'AdobeInvisFont', 'MyriadPro-Regular';
+
+// Размер шрифта
+$font-size-smaller:                              12px;
+$font-size-base:                                 14px;
+$font-size-small:                                16px;
+$font-size-middle:                               18px;
+$font-size-large:                                30px;
+
+// Системные цвета
+$system-color-green-light:                       rgb(94,171,67);
+$system-color-green-dark:                        rgba(48,128,28,1);   
+$system-color-black:                             rgba(55, 55, 55, 255);
+$white-color:                                    rgba(255, 255, 255, 255);  
+
+// Отступы
+$main-padding:                                   12.5%;
+
+// Градиент
+$system-background-gradient:                     linear-gradient(180deg, $system-color-green-light 17%, $system-color-green-dark 77%);
+
+// Медиа запросы
+
+$desktop:                                        1280px;
+$laptop:                                         1024px;
+$tablet:                                         768px;
+$mobile-large:                                   480px;
+$mobile:                                         320px;

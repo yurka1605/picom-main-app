@@ -1,2 +1,3 @@
 'use strict';
-import './style/main.scss';
+import './style/common.scss';
+import './modules/header/header';
