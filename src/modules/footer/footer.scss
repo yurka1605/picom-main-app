@@ -12,7 +12,7 @@
         height: 31px;
         @include display-flex($justify: space-between);
         a{
-            text-decoration: underline;
+            color: $system-color-black;
             font-size: $font-size-middle;
             font-family: $roboto-bold;
         }

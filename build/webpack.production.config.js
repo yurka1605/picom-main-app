@@ -6,13 +6,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'production',
   devtool: 'inline-source-map',
-  entry: {
-    app: './src/index.js'
-  },
+  entry: {app: './src/index.js'},
   output: {
     filename:  './js/[name].js',
     path: path.resolve(__dirname, '../docs'),
-    publicPath: ''
   },
   module: {
     rules: [
@@ -76,7 +73,7 @@ module.exports = {
             options: {
               sourceMap: true,
               config: {
-                path: './src/js/postcss.config.js'
+                path: 'src/js/postcss.config.js'
               } 
             }
           }
@@ -102,14 +99,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: false,
       template: './src/index.pug',
-      filename: 'index.html'
+      filename: 'index.html',
+      inject: true
     }),
     new MiniCssExtractPlugin({
-      filename: './css/[name].css'
+      filename: './style/[name].css'
     }),
     new CopyWebpackPlugin([
       { from: './src/assets', to: './assets' },
-      { from: './src', to: '', ignore: ['*.pug', '*.scss', '*.js', 'modules/**/*']}
+      { from: './src', to: ''}
     ])
   ]
 };
+// , ignore: ['*.pug', '*.scss', '*.js', 'modules/**/*']

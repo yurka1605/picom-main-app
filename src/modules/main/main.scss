@@ -32,3 +32,11 @@
         }
     }
 }
+
+@media (max-width: $mobile-middle) {
+    .page-wrapper{
+        &__slider{
+            padding: 0;
+        }
+    }
+}

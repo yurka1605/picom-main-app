@@ -29,6 +29,14 @@
     }
     &__item{
         @include display-flex($justify: space-between, $items: center);
+        display: inline-flex;
+        white-space: normal;
+    }
+    &__items{
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        height: inherit;
     }
 }
 .main-slider{
@@ -164,6 +172,9 @@
 
 @media (max-width: $mobile-middle) {
     .main-slider{
+        &__block-info{
+            padding: 0 30px;
+        }
         &__image_main{
             left: 20%;
         }

@@ -14,9 +14,12 @@ $font-size-middle:                               18px;
 $font-size-large:                                30px;
 
 // Системные цвета
-$system-color-grey:                              #f5f1ea;
-$system-color-green-light:                       rgb(94,171,67);
-$system-color-green-dark:                        rgba(48,128,28,1);   
+$system-color-grey:                            #f5f1ea;
+$system-color-brown:                           #6f5730;
+$system-color-green-light:                     rgb(94,171,67);
+$system-color-green-dark:                      rgba(48,128,28,1);
+$system-color-pink-light:                      #eedab9;
+$system-color-pink-dark:                       #d8b076;  
 $system-color-black:                             rgba(55, 55, 55, 255);
 $white-color:                                    rgba(255, 255, 255, 255);  
 
@@ -25,7 +28,7 @@ $main-padding:                                   12.5%;
 
 // Градиент
 $system-background-gradient:                     linear-gradient(180deg, $system-color-green-light 17%, $system-color-green-dark 77%);
-
+$system-background-gradient-hover:               linear-gradient(180deg, $system-color-pink-light 17%, $system-color-pink-dark 77%);
 // Медиа запросы
 
 $desktop:                                        1280px;
@@ -36,3 +39,7 @@ $mobile-large:                                   680px;
 $mobile-big:                                     600px;
 $mobile-middle:                                  480px;
 $mobile:                                         320px;
+
+// transition
+
+$transition-events:                              .5s;

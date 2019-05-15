@@ -1,0 +1,40 @@
+-
+    const signUp = {
+        'headline': 'Зарегестрироваться',
+        'fields': [
+            {
+                'placeholder': 'Имя',
+                'type': 'text',
+                'class': 'userName'
+            },
+            {
+                'placeholder': 'Телефон',
+                'type': 'text',
+                'class': 'userNumber'
+            }
+        ],
+        'buttonName': 'Регистрация'
+    }
+-
+    const signIn = {
+        'headline': 'Войти',
+        'fields': [
+            {
+                'placeholder': 'Имя',
+                'type': 'text',
+                'class': 'userName'
+            },
+            {
+                'placeholder': 'Пароль',
+                'type': 'password', 
+                'class': 'userPassword'
+            }
+        ],
+        'buttonName': 'Вход'
+    }
+section.overlay
+section.popup
+    .popup__sign_up
+        +popup(signUp)
+    .popup__sign_in
+        +popup(signIn)

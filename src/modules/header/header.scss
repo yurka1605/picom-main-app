@@ -22,7 +22,7 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
         text-transform: uppercase;
         margin-top: 5px;
         padding-top: 5px;
-        letter-spacing: 1.1px;
+        letter-spacing: 2.4px;
         
         &::before {
             @include psevdo-elements( $top: 0, $left: 0, $width: 100%, $height: 2px);
@@ -33,12 +33,31 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
         @include display-flex( $direct: column, $justify: space-between );
         &_contacts { width: 170px }
     }
-    &__link{
-        @include system-link();
-        &_sign_up { padding-right: 18px }
+    &__block_mobile-menu-button{
+        display: none;
+        position: relative;
+        cursor: pointer;
+        width: 10%;
+        height: 100%;
+        &::after,
+        &::before {
+            @include psevdo-elements($left: 0, $width: 100%, $height: 5px);
+            height: 5px;
+            width: 100%;
+            background-color: $system-color-black;
+            border-radius: 3px;
+        }
+        &::before{ top: 20% }
+        &::after{ bottom: 20% }
+        div{
+            height: 5px;
+            width: 100%;
+            background-color: $system-color-black;
+        }
     }
-    
-    &__span{ @include display-flex()}
+    &__link_sign_up {
+        border-bottom: 1px solid $system-color-green-light dotted;
+    }
     
     &__span_number-company { font-size: $font-size-middle }
     
@@ -46,21 +65,12 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
         @include display-flex( $justify: flex-end, $items: center );
     }
 
-    &__button{
-        @include display-flex( $justify: space-between, $items: center );
+    &__button_sign_in {
         background-color: $system-color-green-light;
         background: $system-background-gradient;
         color: #ffffff;
-        cursor: pointer;
-        outline: none;
-        border: 0;
-
-        &_sign_in {
-            width: 77px;
-            height: 30px;
-            border-radius: 5px;
-            padding: 0 8px;
-            font-size: $font-size-smaller;
+        svg{
+                fill: $white-color;
         }
     }
     &__form{
@@ -75,12 +85,7 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
         position: relative;
         width: 280px;
         height: 30px;
-        box-shadow: inset 0px 1.5px 5px 0px #bdbab6;
-        background-color: $system-color-grey;
-        border: 0;
-        border-radius: 5px;
-        color: $system-color-black;
-        padding: 0 30px 0 10px;
+        @include system-fields();
     }
 
     &__nav{
@@ -92,14 +97,18 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
     width: 100%;
     height: 100%;
     &__list {
-        color: $white-color;
-        font-size: $font-size-smaller;
         background-color: $system-color-green-light;
         background: $system-background-gradient;
         border-left: 1px solid $system-color-green-light;
         border-right: 1px solid $system-color-green-dark;
         padding: 0 15px;
         flex:1 1 auto;
+        &:hover{
+            border-right: 1px solid $system-background-gradient-hover;
+            a{
+                color: $system-color-brown;
+            }
+        }
         &:first-child {
             padding-left: 30px;
             border-top-left-radius: 25px;
@@ -109,6 +118,10 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
             border-top-right-radius: 25px;
             border-right: 0;
             padding-right: 30px;
+        }
+        a{
+            color: $white-color;
+            font-size: $font-size-smaller;
         }
     }
 }
@@ -125,13 +138,22 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
 @media (max-width: $tablet) {
     .page-header{
         &__block_contacts,
-        &__nav{ display: none }
+        &__nav,
+        &__notification{ display: none }
+        &__block{justify-content: center}
         &__input_search{ width: 100% }
+        &__name-company::before {
+            height: 1px;
+        }
+        &__block_mobile-menu-button{
+            @include display-flex($items: center);
+        }
     }
 }
 
 @media (max-width: $mobile-large) {
     .page-header{
+        &__top{align-items: flex-start}
         &__link_page_main{
             width: 106px;
             justify-content: center;
@@ -141,8 +163,19 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
             font-size: $font-size-smaller-xs - 1px;
             padding-top: 1px;
             margin-top: 1px;
-            letter-spacing: 0;
+            letter-spacing: .7px;
             white-space: nowrap;
+        }
+        &__block_mobile-menu-button{
+            height: 32px;
+            width: 25px;
+            &::after,
+            &::before,
+            div {
+                height: 2px;
+            }
+            &::before{ top: 8px}
+            &::after{ bottom: 8px}
         }
     }
 }
@@ -152,11 +185,14 @@ $content-svg-search: url("data:image/svg+xml; utf8, <svg version='1.1' xmlns='ht
         padding: 30px 30px 50px;
         height: auto;
         &__top{
-            flex-direction: column;
-            height: 80px;
+            position: relative;
+            padding-bottom: 20px; 
+            height: 100px;
         }
-        &__notification{
-            display: none;
+        &__block{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
         }
     }
 }

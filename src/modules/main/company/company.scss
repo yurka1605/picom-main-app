@@ -61,9 +61,6 @@
     &__header{
         text-transform: uppercase;
     }
-    &__link{
-        text-decoration: underline;
-    }
     &:last-child{
         margin-bottom: 0;
         padding-bottom: 0;
@@ -171,49 +168,6 @@
             }
             &_three{
                 left: 35px;
-            }
-        }
-    }
-}
-
-@media (max-width: $mobile-large) {
-    .company-news{
-        &__sertificate-button{
-            height: 50px;
-            padding-right: 5px;
-        }
-        &__image{
-            width: 50px;
-            top: 12px;
-            left: 5px;
-            &_three{
-                top: 15px;
-                left: 25px;
-            }
-            &_two{
-                left: 15px;
-                z-index: 2;
-            }
-        }
-    }
-}
-@media (max-width: $mobile-large) {
-    .company-news{
-        &__sertificate-button{
-            height: 50px;
-            padding-right: 5px;
-        }
-        &__image{
-            width: 50px;
-            top: 12px;
-            left: 5px;
-            &_three{
-                top: 15px;
-                left: 25px;
-            }
-            &_two{
-                left: 15px;
-                z-index: 2;
             }
         }
     }

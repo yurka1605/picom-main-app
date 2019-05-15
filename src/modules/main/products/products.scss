@@ -28,8 +28,41 @@
     }
     &__name{
         a{
-            color: $system-color-green-light;
+            text-decoration: none;
             border-bottom: 1px solid $system-color-green-light;
+        }
+    }
+    &__block-button{
+        width: 100%;
+        display: none;
+    }
+    &__button{
+        display: block;
+        width: 170px;
+        height: 35px;
+        font-size: $font-size-smaller-xs;
+        border-radius: 5px;
+        color: $white-color;
+        background: $system-background-gradient;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: $mobile-large) {
+    .main-products{
+        &__list:nth-child(n+7){
+            display: none;
+        }
+        &__block-button{
+            display: block;
+        }
+    }
+}
+
+@media (max-width: $mobile-big) {
+    .main-products{
+        &__list:nth-child(n+4){
+            display: none;
         }
     }
 }

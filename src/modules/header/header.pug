@@ -1,4 +1,30 @@
--const	menuItems = ['О компании', 'Инженерное сопровождение', 'Сертификаты', 'Новости', 'Техническая информация', 'Контакты'];
+-
+    const menuItems = [
+        {
+            'text': 'О компании',
+            'link': ''
+        }, 
+        {
+            'text': 'Инженерное сопровождение',
+            'link': ''
+        },
+        {
+            'text': 'Сертификаты',
+            'link': ''
+        },
+        {
+            'text': 'Новости',
+            'link': ''
+        },
+        {
+            'text': 'Техническая информация',
+            'link': ''
+        },
+        {
+            'text': 'Контакты',
+            'link': ''
+        }
+    ];
 
 header.page-header
     section.page-header__top
@@ -6,22 +32,14 @@ header.page-header
             img.page-header__logo(src="./assets/logo.png", alt="Logo")
             span.page-header__name-company
                 | удмуртские долота
-        div.page-header__block.page-header__block_contacts
-            span.page-header__span.page-header__span_tel
-                | Телефон\факс:
-            span.page-header__span.page-header__span_number-company
-                | (3412) 48-32-98
-            span.page-header__span.page-header__span_email
-                | e-mail:&nbsp;  
-                a.page-header__link.page-header__link_mail(href="mailto:litvinov_yuriy@inbox.ru") bit@udol.ru
-        div.page-header__block
-            div.page-header__notification
-                a.page-header__link.page-header__link_sign_up(href="http://") Регистрация
-                button.page-header__button.page-header__button_sign_in
-                    img(src="./assets/login.svg", alt="login")
-                    | Вход
-            div.page-header__form
+        .page-header__block.page-header__block_contacts
+            +contacts('page-header')
+        .page-header__block
+            +notification('page-header')
+            .page-header__form
                 span
                     input.page-header__input_search(type="search", name="search", placeholder="Поиск")
+        .page-header__block_mobile-menu-button
+            div
     nav.page-header__nav.page-header__nav_menu
-        +menu('header-menu', 'header-menu__list', menuItems)
+        +menu('header-menu', menuItems)
