@@ -1,0 +1,56 @@
+.overlay{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: -50%;
+    opacity: .8;
+    z-index: 10100;
+    width: 200%;
+    height: 100%;
+    background: black;
+}
+.popup{
+    position: absolute;
+    display: none;
+    z-index: 10110;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 310px;
+    height: auto;
+    padding: 50px 50px 65px 30px;
+    background: $system-color-grey;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 #bdbab6;
+
+    &__sign{
+        &_in,
+        &_up{
+            display: none;
+        }
+    }
+
+    &__headline{
+        text-align: center;
+        font-size: $font-size-small;
+        margin-bottom: 20px;
+    }
+    &__field,
+    &__submit{
+        width: 100%;
+    }
+    &__field{
+        height: 30px;
+        margin-bottom: 5px;
+        @include system-fields();
+        background: transparent;
+    }
+    &__submit{
+        height: 35px;
+        border-radius: 5px;
+        margin-top: 10px;
+        background: $system-background-gradient;
+        color: $white-color;
+        font-size: $font-size-smaller-xs;
+    }
+}

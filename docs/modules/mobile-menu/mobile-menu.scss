@@ -1,0 +1,104 @@
+.page-mobile-menu{
+    position: fixed;
+    display: none;
+    z-index: 100;
+    top: 0;
+    transform: translateX(-100%);
+    width: 100%;
+    height: 100vh;
+    background: $system-background-gradient;
+    transition: $transition-events;
+    &__header{
+        @include display-flex($justify: space-between, $items: flex-start);
+        padding: 30px;
+        margin-bottom: 40px;
+    }
+    &__notification{
+        display: flex!important;
+        align-items: center
+    }
+    &__link_sign_up{
+        height: 18px;
+        color: $white-color!important;
+        border-bottom: 2px dotted $white-color;
+    }
+    &__button_sign_in{
+        color: $system-color-green-light;
+        background: $white-color;
+        svg{
+            fill: $system-color-green-light;
+        }
+    }
+    &__button_close{
+        position: relative;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        &::before, &::after{
+            @include psevdo-elements($top: 0, $width: 28px, $height: 2px);
+            background-color: $white-color;
+        }
+        &::before{
+            left: 0;
+            transform-origin: left top;
+            transform: rotate(45deg);
+        }
+        &::after{
+            right: 0;
+            transform-origin: right top;
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__main{
+        height: auto;
+    }
+
+    &__footer{
+        position: absolute;
+        @include display-flex($justify: space-between, $items: center);
+        bottom: 0;
+        padding: 30px 30px 60px;
+        width: 100%;
+        height: auto;
+        color: $white-color;
+    }
+    &__span{
+        &_number-company,
+        &_tel,
+        &_email{
+            color: $white-color;
+        }
+    }
+    &__link_mail{
+        color: $white-color!important;
+    }
+}
+
+.mobile-menu{
+    @include display-flex($direct: column!important);
+    border-top: 1.3px solid $system-color-green-dark;
+    border-bottom: 1.3px solid $system-color-green-light;
+    &__list{
+        width: 100%;
+        height: 40px;
+        color: $white-color;
+        padding-left: 42px;
+        justify-content: flex-start!important;
+        border-top: 1.3px solid $system-color-green-light;
+        border-bottom: 1.3px solid $system-color-green-dark;
+        a{
+            color: $white-color;
+        }
+        &:hover{
+            border-bottom: 1.3px solid $system-color-pink-dark;
+            a{
+                color: $system-color-brown;
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .page-mobile-menu{display: block}
+}

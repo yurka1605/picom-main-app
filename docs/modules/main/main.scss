@@ -1,0 +1,42 @@
+.page-wrapper{
+    &__content{
+        width: 100%;
+    }
+    &__slider{
+        background: $system-background-gradient;
+        padding: 0 $main-padding;
+        height: 240px;
+    }
+
+    &__products{
+        padding: 0 $main-padding;
+    }
+
+    &__company-info{
+        @include display-flex($justify: space-between);
+        padding: 60px $main-padding 50px;
+    }
+}
+
+
+@media (max-width: $tablet) {
+    .page-wrapper{
+        &__slider{
+            padding: 0 30px;
+        }
+        &__products{
+            padding: 0;
+        }
+        &__company-info{
+            padding: 60px 30px 50px;
+        }
+    }
+}
+
+@media (max-width: $mobile-middle) {
+    .page-wrapper{
+        &__slider{
+            padding: 0;
+        }
+    }
+}

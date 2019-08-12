@@ -1,0 +1,45 @@
+-
+    const menuItems = [
+        {
+            'text': 'О компании',
+            'link': ''
+        }, 
+        {
+            'text': 'Инженерное сопровождение',
+            'link': ''
+        },
+        {
+            'text': 'Сертификаты',
+            'link': ''
+        },
+        {
+            'text': 'Новости',
+            'link': ''
+        },
+        {
+            'text': 'Техническая информация',
+            'link': ''
+        },
+        {
+            'text': 'Контакты',
+            'link': ''
+        }
+    ];
+
+header.page-header
+    section.page-header__top
+        a.page-header__link_page_main(href="http://") 
+            img.page-header__logo(src="./assets/logo.png", alt="Logo")
+            span.page-header__name-company
+                | удмуртские долота
+        .page-header__block.page-header__block_contacts
+            +contacts('page-header')
+        .page-header__block
+            +notification('page-header')
+            .page-header__form
+                span
+                    input.page-header__input_search(type="search", name="search", placeholder="Поиск")
+        .page-header__block_mobile-menu-button
+            div
+    nav.page-header__nav.page-header__nav_menu
+        +menu('header-menu', menuItems)

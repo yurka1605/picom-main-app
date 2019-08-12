@@ -1,0 +1,54 @@
+-const customClass ='main-products';
+-
+    const products = [
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Долота PDC',
+            'link': '#'
+        },
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Бурголовки PDC'
+        },
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Бицентричные долота PDC'
+        },
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Твердосплавные долота'
+        },
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Подвески «хвостовиков»'
+        },
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Оборудование для отбора керна'
+        },
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Калибраторы и центраторы'
+        },
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Клапаны для ВЗД'
+        },
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Оборудование для цементирования скважин'
+        },
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Технологическая оснастка обсадных колонн'
+        },
+        {
+            'image': './assets/image-product.png',
+            'productName': 'Вспомогательное оборудование'
+        }
+    ];
+
+section.products.main-products
+    +product-list(customClass, products)
+    .main-products__block-button
+        button.main-products__button Весь каталог

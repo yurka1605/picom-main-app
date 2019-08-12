@@ -1,0 +1,81 @@
+//- Меню
+mixin menu(classMenu, items)
+    ul.menu(class=classMenu)
+        each item in items
+            li.menu__item(class=`${ classMenu }__list`)
+                a(href=`https://${ item.link }`)=item.text
+
+//- Слайдер            
+mixin slider(slider)
+    section.slider(class=slider.customSlider)
+        +arrow(slider.item, `${ slider.customSlider }__arrow`)
+        .slider__items(class=`${ slider.customSlide }__slides`)
+            each item in slider.slides
+                .slider__item(class=slider.customSlide)
+                    div(class=`${ slider.customSlider }__block-info`)
+                        h1(class=`${ slider.customSlider }__name-slide`) #{item.head}
+                        div(class=`${ slider.customSlider }__descriptions`) #{item.body}
+                    div(class=`${ slider.customSlider }__block-image`)
+                        img(class=`${ slider.customSlider }__image_shadow_dark`, src="./assets/shadow-dark-img.png")
+                        img(class=`${ slider.customSlider }__image_shadow_light`, src="./assets/shadow-light-img.png")
+                        img(class=`${ slider.customSlider }__image_main` ,src=item.img, alt="")
+
+//- Стрелки
+mixin arrow(imgSrc, customArrow)
+    if(imgSrc) 
+        .slider__arrow.slider__arrow_left(class=customArrow)
+            img(src=slider.arrowIcon, alt="Arrow")    
+        .slider__arrow.slider__arrow_right(class=customArrow)
+            img(src=slider.arrowIcon, alt="Arrow")  
+    else
+        .slider__arrow.slider__arrow_left(class=customArrow)
+            .slider__arrow_block
+        .slider__arrow.slider__arrow_right(class=customArrow)
+            .slider__arrow_block
+
+//-Товары
+mixin product-list(customClass, products)
+    each product in products
+        section.product(class=`${ customClass }__list`)
+            .product__image(class=`${ customClass }__image`)
+                img(src=product.image, alt=product.productName)
+            h3(class=`${ customClass }__name`)
+                a.system-link(href=`${ product.link ? product.link : '#' }`) #{product.productName}
+//-Успехи
+mixin listing(classListing, items)
+    ul(class=`${classListing}__listing`)
+        each item in items
+            li(class=`${classListing}__list`)
+                | #{item}
+
+//-Новостные статьи
+mixin articles(classArticles, items)
+    each item in items
+        article.article(class=`${ classArticles }__article`)
+            time.article__header(class=`${ classArticles }__header-article`) #{item.date}
+            a.system-link(href=item.link ? `${item.link}`:"#", class=`${ classArticles }__link`)
+                | #{item.description}
+
+//-Идентификация
+mixin notification(classNotification)
+    section(class=`${ classNotification }__notification`)
+        a.system-link.notification-link(class=`${ classNotification }__link_sign_up`, href="javascript:void(0)") Регистрация
+        button.notification-button(class=`${ classNotification }__button_sign_in`)            
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="18"><defs/><g><path stroke="none" paint-order="stroke fill markers" fill-rule="evenodd" d=" M 1.6417503356933594 2.452844560146332 C 1.6417503356933594 2.452844560146332 3.896228790283203 6.585429131984711 11.997299194335938 5.904670536518097 C 11.997299194335938 5.904670536518097 11.997299194335938 1.1142522096633911 11.997299194335938 1.1142522096633911 C 11.997299194335938 1.1142522096633911 19.605436325073242 8.652158081531525 19.605436325073242 8.652158081531525 C 19.605436325073242 8.652158081531525 11.997299194335938 16.260148465633392 11.997299194335938 16.260148465633392 C 11.997299194335938 16.260148465633392 11.997299194335938 11.422788798809052 11.997299194335938 11.422788798809052 C 1.6417503356933594 9.990532100200653 1.6417503356933594 2.452844560146332 1.6417503356933594 2.452844560146332 Z"/></g></svg>
+            | Вход
+
+mixin contacts(classContacts)
+    .phone-number
+        span.contacts-span(class=`${ classContacts }__span_tel`)
+            | Телефон\факс:
+        span.contacts-span(class=`${ classContacts }__span_number-company`)
+            | (3412) 48-32-98
+    span.contcats-span(class=`${ classContacts }__span_email`)
+        | e-mail:&nbsp;  
+        a.system-link(class=`${ classContacts }__link_mail`, href="mailto:litvinov_yuriy@inbox.ru") bit@udol.ru
+
+mixin popup(popup)
+    h2.popup__headline #{ popup.headline }
+    each field in popup.fields
+        input.popup__field(class=`${ field.class }`, placeholder=`${ field.placeholder }`, type=`${ field.type }`)
+    button.popup__submit(type="submit") #{ popup.buttonName }

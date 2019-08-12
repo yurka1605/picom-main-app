@@ -1,0 +1,43 @@
+@mixin position-center( $center-x: 0, $center-y: 0 ) {
+    position: absolute;
+    top: $center-y;
+    left: $center-x;
+    transform: translate( -#{$center-x } , -#{$center-y} );
+}
+
+@mixin display-flex( $direct: unset, $justify: unset, $items: unset) {
+    display: flex;
+    flex-direction: $direct;
+    justify-content: $justify;
+    align-items: $items;
+}
+
+@mixin psevdo-elements($content: '', $top: auto, $left: auto, $right: auto, $bottom: auto, $width: auto, $height: auto) {
+    position: absolute;
+    content: $content;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    width: $width;
+    height: $height;
+}
+
+@mixin media( $device-width, $direction ) {
+    @media ( #{$direction}-width: $device-width ){
+        @content;
+    }
+}
+
+@mixin system-link(){
+    text-decoration: underline;
+    color: $system-color-green-light;
+}
+
+@mixin system-fields(){
+    box-shadow: inset 0px 1.5px 5px 0px #bdbab6;
+    background-color: $system-color-grey;
+    border-radius: 5px;
+    color: $system-color-black;
+    padding: 0 30px 0 10px;
+}
