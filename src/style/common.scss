@@ -12,11 +12,13 @@
 @font-face{
     font-family: 'Tahoma-Bold';
     src: url('../fonts/Tahoma-Bold.ttf');
+    fallback: swap;
 }
 
 @font-face{
     font-family: 'Roboto-Bold';
     src: url('../fonts/Roboto-Bold.ttf');
+    fallback: swap;
 }
 
 *{
