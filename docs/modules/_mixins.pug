@@ -3,7 +3,7 @@ mixin menu(classMenu, items)
     ul.menu(class=classMenu)
         each item in items
             li.menu__item(class=`${ classMenu }__list`)
-                a(href=`https://${ item.link }`)=item.text
+                a(href=`${ item.link }`)=item.text
 
 //- Слайдер            
 mixin slider(slider)
