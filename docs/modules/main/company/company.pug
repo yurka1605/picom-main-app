@@ -45,9 +45,9 @@ section.company-about
 section.company-news
     .company-header.company-news__header
         h2 Новости
-    section.company-news__articles
+    div.company-news__articles
         +articles('company-news', companyArticles)
-    section.company-news__sertificate
+    div.company-news__sertificate
         button.company-news__sertificate-button
             +imgOpt("company-news__image company-news__image_first", "./assets/sertificate-1", "Sertificate1", "png")
             +imgOpt("company-news__image company-news__image_two", "./assets/sertificate-2", "Sertificate2", "png")
