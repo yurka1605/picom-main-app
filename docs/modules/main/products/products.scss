@@ -48,6 +48,18 @@
     }
 }
 
+@media (max-width: $laptop-min) {
+    .main-products {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: $tablet) {
+    .main-products {
+        justify-content: center;
+    }
+}
+
 @media (max-width: $mobile-large) {
     .main-products{
         &__list:nth-child(n+7){
@@ -69,6 +81,8 @@
 
 @media (max-width: $mobile) {
     .main-products{
-        padding-left: 30px;
+        &__list {
+            margin-right: 0;
+        }
     }
 }

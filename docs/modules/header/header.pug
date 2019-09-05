@@ -28,8 +28,8 @@
 
 header.page-header
     section.page-header__top
-        a.page-header__link_page_main(href="http://") 
-            img.page-header__logo(src="./assets/logo.png", alt="Logo")
+        a.page-header__link_page_main(href="http://")
+            +imgOpt("page-header__logo", "./assets/logo", "Logo", "png")
             span.page-header__name-company
                 | удмуртские долота
         .page-header__block.page-header__block_contacts

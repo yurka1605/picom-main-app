@@ -49,7 +49,7 @@ section.company-news
         +articles('company-news', companyArticles)
     section.company-news__sertificate
         button.company-news__sertificate-button
-            img.company-news__image.company-news__image_first(src="./assets/sertificate-1.png")
-            img.company-news__image.company-news__image_two(src="./assets/sertificate-2.png")
-            img.company-news__image.company-news__image_three(src="./assets/sertificate-3.png")
+            +imgOpt("company-news__image company-news__image_first", "./assets/sertificate-1", "Sertificate1", "png")
+            +imgOpt("company-news__image company-news__image_two", "./assets/sertificate-2", "Sertificate2", "png")
+            +imgOpt("company-news__image company-news__image_three", "./assets/sertificate-3", "Sertificate3", "png")
             | Сертификаты
