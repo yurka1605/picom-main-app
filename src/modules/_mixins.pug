@@ -16,9 +16,15 @@ mixin slider(slider)
                         h1(class=`${ slider.customSlider }__name-slide`) #{item.head}
                         div(class=`${ slider.customSlider }__descriptions`) #{item.body}
                     div(class=`${ slider.customSlider }__block-image`)
-                        img(class=`${ slider.customSlider }__image_shadow_dark`, src="./assets/shadow-dark-img.png")
-                        img(class=`${ slider.customSlider }__image_shadow_light`, src="./assets/shadow-light-img.png")
-                        img(class=`${ slider.customSlider }__image_main` ,src=item.img, alt="")
+                        +imgOpt(`${ slider.customSlider }__image_shadow_dark`, "./assets/shadow-dark-img", "shadow", "png")
+                        +imgOpt(`${ slider.customSlider }__image_shadow_light`, "./assets/shadow-light-img", "shadow", "png")
+                        +imgOpt(`${ slider.customSlider }__image_main`, item.img, "sliderImg", item.format)
+
+//- Оптимизация изображений, использование webp формата
+mixin imgOpt(customClass, imgSrc, alt, format)
+    picture
+        source(class=`${ customClass }`, srcset=`${ imgSrc }.webp` type="image/webp")
+        img(class=`${ customClass }`, src=`${ imgSrc }.${format}` alt=alt)
 
 //- Стрелки
 mixin arrow(imgSrc, customArrow)
@@ -38,7 +44,7 @@ mixin product-list(customClass, products)
     each product in products
         section.product(class=`${ customClass }__list`)
             .product__image(class=`${ customClass }__image`)
-                img(src=product.image, alt=product.productName)
+                +imgOpt("", product.image, product.productName, product.imageFormat)
             h3(class=`${ customClass }__name`)
                 a.system-link(href=`${ product.link ? product.link : '#' }`) #{product.productName}
 //-Успехи
