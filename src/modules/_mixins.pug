@@ -58,7 +58,7 @@ mixin listing(classListing, items)
 mixin articles(classArticles, items)
     each item in items
         article.article(class=`${ classArticles }__article`)
-            span.article__header(class=`${ classArticles }__header-article`) #{item.date}
+            h2.article__header(class=`${ classArticles }__header-article`) #{item.date}
             a.system-link(href=item.link ? `${item.link}`:"#", class=`${ classArticles }__link`)
                 | #{item.description}
 
