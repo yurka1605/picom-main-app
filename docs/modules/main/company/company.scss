@@ -5,7 +5,7 @@
     
     &__header{
         font-size: $font-size-middle;
-        h1{
+        h2{
             font-family: inherit;
             font-size: inherit;
             color: inherit;
@@ -70,7 +70,7 @@
 .company-news{
     width: $mobile;
     &__header{
-        h1{
+        h2 {
             color: inherit;
             font-size: inherit;
         }

@@ -13,7 +13,7 @@ mixin slider(slider)
             each item in slider.slides
                 .slider__item(class=slider.customSlide)
                     div(class=`${ slider.customSlider }__block-info`)
-                        h1(class=`${ slider.customSlider }__name-slide`) #{item.head}
+                        h2(class=`${ slider.customSlider }__name-slide`) #{item.head}
                         div(class=`${ slider.customSlider }__descriptions`) #{item.body}
                     div(class=`${ slider.customSlider }__block-image`)
                         +imgOpt(`${ slider.customSlider }__image_shadow_dark`, "./assets/shadow-dark-img", "shadow", "png")
@@ -58,7 +58,7 @@ mixin listing(classListing, items)
 mixin articles(classArticles, items)
     each item in items
         article.article(class=`${ classArticles }__article`)
-            time.article__header(class=`${ classArticles }__header-article`) #{item.date}
+            span.article__header(class=`${ classArticles }__header-article`) #{item.date}
             a.system-link(href=item.link ? `${item.link}`:"#", class=`${ classArticles }__link`)
                 | #{item.description}
 
@@ -67,7 +67,7 @@ mixin notification(classNotification)
     section(class=`${ classNotification }__notification`)
         a.system-link.notification-link(class=`${ classNotification }__link_sign_up`, href="javascript:void(0)") Регистрация
         button.notification-button(class=`${ classNotification }__button_sign_in`)            
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="18"><defs/><g><path stroke="none" paint-order="stroke fill markers" fill-rule="evenodd" d=" M 1.6417503356933594 2.452844560146332 C 1.6417503356933594 2.452844560146332 3.896228790283203 6.585429131984711 11.997299194335938 5.904670536518097 C 11.997299194335938 5.904670536518097 11.997299194335938 1.1142522096633911 11.997299194335938 1.1142522096633911 C 11.997299194335938 1.1142522096633911 19.605436325073242 8.652158081531525 19.605436325073242 8.652158081531525 C 19.605436325073242 8.652158081531525 11.997299194335938 16.260148465633392 11.997299194335938 16.260148465633392 C 11.997299194335938 16.260148465633392 11.997299194335938 11.422788798809052 11.997299194335938 11.422788798809052 C 1.6417503356933594 9.990532100200653 1.6417503356933594 2.452844560146332 1.6417503356933594 2.452844560146332 Z"/></g></svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="18"><defs/><g><path stroke="none" fill-rule="evenodd" d=" M 1.6417503356933594 2.452844560146332 C 1.6417503356933594 2.452844560146332 3.896228790283203 6.585429131984711 11.997299194335938 5.904670536518097 C 11.997299194335938 5.904670536518097 11.997299194335938 1.1142522096633911 11.997299194335938 1.1142522096633911 C 11.997299194335938 1.1142522096633911 19.605436325073242 8.652158081531525 19.605436325073242 8.652158081531525 C 19.605436325073242 8.652158081531525 11.997299194335938 16.260148465633392 11.997299194335938 16.260148465633392 C 11.997299194335938 16.260148465633392 11.997299194335938 11.422788798809052 11.997299194335938 11.422788798809052 C 1.6417503356933594 9.990532100200653 1.6417503356933594 2.452844560146332 1.6417503356933594 2.452844560146332 Z"/></g></svg>
             | Вход
 
 mixin contacts(classContacts)
