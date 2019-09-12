@@ -139,7 +139,7 @@
 @media (max-width: $mobile-big) {
     .main-slider{
         align-items: flex-start;
-        padding-top: 30px;
+        padding-top: 30px!important;
         &__item{
             flex-direction: column;
             justify-content: flex-start;

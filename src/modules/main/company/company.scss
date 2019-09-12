@@ -176,7 +176,9 @@
 
 @media (max-width: $mobile-big) {
     .company-about{
+        margin: 0;
         margin-bottom: 40px;
+        width: auto;
     }
     .company-news{
         width: auto;
