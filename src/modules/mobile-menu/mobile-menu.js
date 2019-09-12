@@ -1,4 +1,4 @@
-import { html, mobileMenuButtonClose, mobileMenu } from "../_vars";
+import { html , mobileMenuButtonClose, mobileMenu } from "../_vars";
 
 export const mobileMenuCheckEvents = () => {
     mobileMenuButtonClose.addEventListener('click', () => {
