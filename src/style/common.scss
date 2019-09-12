@@ -8,28 +8,18 @@
 @import '../modules/footer/footer';
 @import '../modules/mobile-menu/mobile-menu';
 @import '../modules/popup/popup';
-
-@font-face{
-    font-family: 'Tahoma-Bold';
-    src: url('../fonts/Tahoma-Bold.ttf');
-    fallback: swap;
-}
-
-@font-face{
-    font-family: 'Roboto-Bold';
-    src: url('../fonts/Roboto-Bold.ttf');
-    fallback: swap;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic');
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: $roboto-regular;
+    font-family: $roboto;
+    font-weight: 400;
     font-size: $font-size-base;
     color: $system-color-black;
 }
-html, body{
+html, body {
     width: 100%;
     overflow-x: hidden;
 }
@@ -43,6 +33,7 @@ button {
     border: 0; 
 }
 button {
+    overflow-x: hidden;
     cursor: pointer;
 }
 
