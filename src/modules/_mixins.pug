@@ -10,15 +10,25 @@ mixin slider(slider)
     div.slider(class=slider.customSlider)
         +arrow(slider.item, `${ slider.customSlider }__arrow`)
         .slider__items(class=`${ slider.customSlide }__slides`)
-            each item in slider.slides
-                .slider__item(class=slider.customSlide)
-                    div(class=`${ slider.customSlider }__block-info`)
-                        h2(class=`${ slider.customSlider }__name-slide`) #{item.head}
-                        div(class=`${ slider.customSlider }__descriptions`) #{item.body}
-                    div(class=`${ slider.customSlider }__block-image`)
-                        +imgOpt(`${ slider.customSlider }__image_shadow_dark`, "./assets/shadow-dark-img", "shadow", "png")
-                        +imgOpt(`${ slider.customSlider }__image_shadow_light`, "./assets/shadow-light-img", "shadow", "png")
-                        +imgOpt(`${ slider.customSlider }__image_main`, item.img, "sliderImg", item.format)
+            each item,index in slider.slides
+                if index === 1 
+                    .slider__item(class=`${ slider.customSlide } active`)
+                        div(class=`${ slider.customSlider }__block-info`)
+                            h2(class=`${ slider.customSlider }__name-slide`) #{item.head}
+                            div(class=`${ slider.customSlider }__descriptions`) #{item.body}
+                        div(class=`${ slider.customSlider }__block-image`)
+                            +imgOpt(`${ slider.customSlider }__image_shadow_dark`, "./assets/shadow-dark-img", "shadow", "png")
+                            +imgOpt(`${ slider.customSlider }__image_shadow_light`, "./assets/shadow-light-img", "shadow", "png")
+                            +imgOpt(`${ slider.customSlider }__image_main`, item.img, "sliderImg", item.format)
+                else
+                    .slider__item(class=`${ slider.customSlide }`)
+                        div(class=`${ slider.customSlider }__block-info`)
+                            h2(class=`${ slider.customSlider }__name-slide`) #{item.head}
+                            div(class=`${ slider.customSlider }__descriptions`) #{item.body}
+                        div(class=`${ slider.customSlider }__block-image`)
+                            +imgOpt(`${ slider.customSlider }__image_shadow_dark`, "./assets/shadow-dark-img", "shadow", "png")
+                            +imgOpt(`${ slider.customSlider }__image_shadow_light`, "./assets/shadow-light-img", "shadow", "png")
+                            +imgOpt(`${ slider.customSlider }__image_main`, item.img, "sliderImg", item.format)
 
 //- Оптимизация изображений, использование webp формата
 mixin imgOpt(customClass, imgSrc, alt, format)
