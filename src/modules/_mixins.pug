@@ -11,7 +11,7 @@ mixin slider(slider)
         +arrow(slider.item, `${ slider.customSlider }__arrow`)
         .slider__items(class=`${ slider.customSlide }__slides`)
             each item,index in slider.slides
-                .slider__item(class=`${ slider.customSlide } ${ index === 1 ? 'active' : ''}`)
+                .slider__item(class=`${ slider.customSlide } ${ index === 0 ? 'active' : ''}`)
                     div(class=`${ slider.customSlider }__block-info`)
                         h2(class=`${ slider.customSlider }__name-slide`) #{item.head}
                         div(class=`${ slider.customSlider }__descriptions`) #{item.body}
