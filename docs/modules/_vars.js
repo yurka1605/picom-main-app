@@ -20,4 +20,6 @@ export const popupSubmit = document.querySelectorAll('.popup__submit');
 
 export const sliderLeftArrow = document.querySelector('.slider__arrow_left');
 export const sliderRightArrow = document.querySelector('.slider__arrow_right');
-export const slides = document.querySelectorAll('.slider__item');
+export const slides = document.querySelector('.slider__items');
+export const slider = document.querySelector('.slider');
+export const slide = document.querySelectorAll('.slider__item');

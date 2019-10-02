@@ -1,4 +1,4 @@
-.slider{
+.slider {
     position: relative;
     @include display-flex($justify: space-between, $items: center);
     &__arrow{
@@ -31,6 +31,14 @@
         @include display-flex($justify: space-between, $items: center);
         display: inline-flex;
         white-space: normal;
+        transition: .8s;
+        transition-timing-function: ease-out;
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        &.active-right {
+            margin-left: -100%;
+        }
     }
     &__items{
         position: relative;
@@ -39,7 +47,7 @@
         height: inherit;
     }
 }
-.main-slider{
+.main-slider {
     padding: 0 8%;
     height: inherit;
 
