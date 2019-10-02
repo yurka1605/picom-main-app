@@ -16,19 +16,17 @@ export const sliderCheckEvents = () => {
         slider.addEventListener('touchstart', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            startX = e.screenX;
+            startX = e.changedTouches[0].clientX;
         });
 
         slider.addEventListener('touchend', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            e.screenX;
-            let touchMoveX = e.screenX - startX;
-
-            if (touchMoveX > -10 ) {
-                switchSlide(false);
-            } else if (touchMoveX < 10) {
+            let touchMoveX = e.changedTouches[0].clientX - startX;
+            if (touchMoveX < -20 ) {
                 switchSlide(true);
+            } else if (touchMoveX > 20) {
+                switchSlide(false);
             } else {
                 return false;
             }
