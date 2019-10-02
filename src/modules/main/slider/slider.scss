@@ -31,7 +31,7 @@
         @include display-flex($justify: space-between, $items: center);
         display: inline-flex;
         white-space: normal;
-        transition: .8s;
+        transition: .5s;
         transition-timing-function: ease-out;
         width: 100%;
         height: 100%;

@@ -1,15 +1,13 @@
-import { sliderRightArrow, sliderLeftArrow, slider, slides, slide } from '../../_vars';
-
+import { sliderRightArrow, sliderLeftArrow, slider } from '../../_vars';
 
 export const sliderCheckEvents = () => {
-    console.log('ontouchstart' in window);
     if (!('ontouchstart' in window)) {
-        sliderLeftArrow.addEventListener('click', () => {
-            switchSlide(false);
+        sliderLeftArrow.addEventListener('click', function() {
+            switchSlide(false, this.parentElement.lastElementChild);
         });
     
-        sliderRightArrow.addEventListener('click', () => {
-            switchSlide(true);
+        sliderRightArrow.addEventListener('click', function() {
+            switchSlide(true, this.parentElement.lastElementChild);
         });
     } else {
         let startX;
@@ -19,23 +17,24 @@ export const sliderCheckEvents = () => {
             startX = e.changedTouches[0].clientX;
         });
 
-        slider.addEventListener('touchend', (e) => {
+        slider.addEventListener('touchend', function(e) {
             e.preventDefault();
             e.stopPropagation();
             let touchMoveX = e.changedTouches[0].clientX - startX;
             if (touchMoveX < -20 ) {
-                switchSlide(true);
+                switchSlide(true, this.lastElementChild);
             } else if (touchMoveX > 20) {
-                switchSlide(false);
+                switchSlide(false, this.lastElementChild);
             } else {
                 return false;
             }
         });
     }
 
-    function switchSlide(isRight) {
+    function switchSlide(isRight, slides) {
         let activeSlide;
-        slide.forEach(el => {
+
+        Array.from(slides.children).forEach(el => {
             if (el.classList.contains('active')) {
                 activeSlide = el;
             }
