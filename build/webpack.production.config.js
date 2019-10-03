@@ -40,20 +40,20 @@ module.exports = {
           { 
             loader: 'css-loader',
             options: { 
-              sourceMap: true,
+              sourceMap: false,
               url: false
             } 
           },
           { 
             loader: 'postcss-loader',
             options: {
-              sourceMap: true,
+              sourceMap: false,
               config: { path: 'src/js/postcss.config.js'} 
             } 
           },
           { 
             loader: 'sass-loader',
-            options: { sourceMap: true } 
+            options: { sourceMap: false } 
           },
         ],
       },
@@ -64,7 +64,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
+              sourceMap: false,
               url: false
             }
           }, 
